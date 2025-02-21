@@ -27,7 +27,7 @@ li{
 }
 
 h2{
-    font-size: 40px;
+    font-size: 2.5rem; /*40px*/
     margin: 60px 0 10px;
 }
 
@@ -240,6 +240,50 @@ h1{
     color: var(--primary-color);
     margin: 10px 0 0;
 }
+
+/*Sobre nós*/
+.cards-sobre-nos{
+    display: block;
+}
+
+.card-sobre-nos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    margin-bottom: 30px;
+}
+
+.image-sobre-nos{
+    width: 400px;
+}
+
+.image-sobre-nos img{
+    width: 100%;
+}
+
+.texto-sobre-nos{
+    width: 600px;
+}
+
+.texto-sobre-nos h3{
+    font-size: 1.75rem; /*28px*/
+}
+
+.texto-sobre-nos p{
+    margin: 15px auto;
+    line-height: 24px;
+    text-align: left;
+}
+
+.bi-stars{
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+
+
 
 /********************************************************************* FOOTER ***********************************************************************/
 footer{
