@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Montserrat", Arial, serif;
 }
 
 :root{
@@ -28,18 +29,21 @@ li{
 
 h2{
     font-size: 2.5rem; /*40px*/
+    
     margin: 60px 0 10px;
 }
 
 /********************************************************************* HEADER ***********************************************************************/
 header{
-    background-color: var(--primary-color);
-    color: var(--white-color);
-    padding: 20px 40px;
     /*Navbar fixa*/
     position: sticky;
     top: 0;
     z-index: 1000;
+
+    background-color: var(--primary-color);
+    color: var(--white-color);
+
+    padding: 20px 40px;
 }
 
 header a{
@@ -78,8 +82,9 @@ header a{
 }
 
 .btn:hover{
-    background-color: var(--secondary-color);
     border: 1px solid var(--secondary-color);
+
+    background-color: var(--secondary-color);
     color: var(--fourth-color);
     transition: 0.3s;
 }
@@ -87,6 +92,7 @@ header a{
 /********************************************************************* MAIN ***********************************************************************/
 main{
     padding: 20px 40px;
+    
     background-color: var(--white-color);
     text-align: center;
 }
@@ -113,6 +119,7 @@ h1{
 .banner-hero{
     width: 600px;
     height: 400px;
+    
     background-image: url(../Imgs/img-1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -122,6 +129,7 @@ h1{
 .subtitle{
     font-weight: 700;
     font-size: 1rem;
+    
     margin: 0 0 30px;
 }
 
@@ -137,6 +145,7 @@ h1{
     width: 210px;
     padding: 15px;
     border-radius: 8px;
+    
     background-color: var(--black-color);
     color: var(--white-color);
 }
@@ -150,12 +159,14 @@ h1{
 .imagem-produto{
     width: 180px;
     height: 150px;
-    object-fit: cover;
     border-radius: 8px;
+
+    object-fit: cover;
 }
 
 .card p{
     margin: 15px 0 5px;
+    
     font-weight: 700;
 }
 
@@ -163,6 +174,7 @@ h1{
     padding: 2px 4px;
     border: 1px solid var(--white-color);
     border-radius: 10px;
+   
     font-size: 0.625rem;
 }
 
@@ -175,10 +187,12 @@ h1{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    
     color: var(--white-color);
     font-weight: 600;
-    margin: 15px 0 0;
     background-color: var(--secondary-color);
+   
+    margin: 15px 0 0;
     padding: 10px 0;
     border-radius: 8px;
 }
@@ -203,22 +217,27 @@ h1{
     justify-content: center;
     align-items: stretch;
     gap: 30px;
+    
     margin: 0 0 40px;
 }
 
 .depoimento{
     background-color: var(--tertiary-color);
+    
     padding: 20px;
     width: 400px;
+    border-radius: 10px;
+    border: 1px solid var(--tertiary-color);
+    
     font-size: 1rem;
     line-height: 24px;
-    border-radius: 10px;
+    
     transition: 0.3s;
-    border: 1px solid var(--tertiary-color);
 }
 
 .depoimento:hover {
     transform: translate3d(0, -10px, 0) scale(1.01);
+    
     border: 1px solid var(--primary-color);
 }
 
@@ -238,6 +257,7 @@ h1{
 
 .classificacao{
     color: var(--primary-color);
+    
     margin: 10px 0 0;
 }
 
@@ -273,6 +293,7 @@ h1{
 
 .texto-sobre-nos p{
     margin: 15px auto;
+    
     line-height: 24px;
     text-align: left;
 }
@@ -282,8 +303,98 @@ h1{
     font-size: 1.5rem;
 }
 
+/*Contato
+#contato p{
+    margin: 20px auto;
+}
+*/
+#form-contato{
+    margin: 20px auto 40px;
+    width: 380px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--primary-color);
 
+    box-shadow: 0 0 8px 2px var(--primary-color);
+}
 
+#form-contato label{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    
+    font-weight: 700;
+    
+    margin-bottom: 20px;
+}
+
+/*
+O Chrome usa a pseudo-classe :-webkit-autofill para aplicar estilos aos campos preenchidos automaticamente. Você pode usar essa pseudo-classe para redefinir os estilos padrão.
+
+transition: background-color 5000s ease-in-out 0s;: Esta linha é crucial. Ela força o Chrome a aplicar a cor de fundo desejada, mesmo que o preenchimento automático tente substituí-la. O valor 5000s é um tempo de transição longo o suficiente para garantir que a cor de fundo seja aplicada.
+
+-webkit-background-clip: text;: Essa propriedade garante que a cor de fundo seja aplicada apenas ao texto dentro do campo, em vez de preencher todo o campo.
+
+-webkit-text-fill-color: #333;: Define a cor do texto para um valor específico (no exemplo, #333). Substitua #333 pela cor desejada.
+*/
+input:-webkit-autofill{
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-background-clip: text; /*Fundo*/
+    -webkit-text-fill-color: var(--primary-color); /*Texto*/
+}
+
+input, textarea{
+    outline: none;
+    
+    padding: 5px;
+    min-width: 100%;
+    border-radius: 4px;
+    border: 1px solid var(--secondary-color);
+    
+    color: var(--primary-color);
+    font-family: "Montserrat", Arial, serif;
+}
+
+input:focus, textarea:focus{
+    border: 1px solid var(--primary-color);
+}
+
+textarea{
+    min-height: 150px;
+    max-width: 100%;
+}
+
+#btn-submit{
+    color: var(--white-color);
+    font-size: 1.125rem;
+    font-weight: 700;
+    background-color: var(--primary-color);
+    
+    border: none;
+    border-radius: 8px;
+    padding: 10px 30px;
+}
+
+.icons-contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    
+    margin: 20px auto;
+}
+
+.icon-contact{
+    color: var(--primary-color);
+    font-size: 35px;
+}
+
+.icon-contact:hover{
+    color: var(--secondary-color);
+    transition: 0.3s;
+}
 
 /********************************************************************* FOOTER ***********************************************************************/
 footer{
