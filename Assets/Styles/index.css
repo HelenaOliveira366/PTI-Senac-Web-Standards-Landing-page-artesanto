@@ -10,7 +10,6 @@
     --primary-color: #780C28;
     --secondary-color: #6E8E59;
     --tertiary-color: #CAE0BC;
-    --fourth-color: #F7F7F7;
     --black-color: #151515;
     --white-color: #F7F7F7;
 
@@ -85,13 +84,13 @@ header a{
     border: 1px solid var(--secondary-color);
 
     background-color: var(--secondary-color);
-    color: var(--fourth-color);
+    color: var(--white-color);
     transition: 0.3s;
 }
 
 /********************************************************************* MAIN ***********************************************************************/
 main{
-    padding: 20px 40px;
+    /*padding: 20px 40px;*/
     
     background-color: var(--white-color);
     text-align: center;
@@ -105,24 +104,26 @@ h1, h2, h3, h4, h5, h6{
 /*Hero*/
 h1{
     font-size: 3.125rem;
+    color: var(--white-color);
 }
 
 #hero{
+    height: 500px;
+    width: 100%;
+
+    background-image: url(../Imgs/Wallpaper-hero.png);
+    background-repeat: repeat;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
-
-    border: 1px solid red;
 }
 
-.banner-hero{
-    width: 600px;
-    height: 400px;
-    
-    background-image: url(../Imgs/img-1.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+.texts{
+    color: var(--white-color) !important;
+    background-color: var(--primary-color );
+
+    padding: 20px 30px;
 }
 
 /*Produtos*/
@@ -144,16 +145,17 @@ h1{
 .card{
     width: 210px;
     padding: 15px;
+    /*border: 2px dashed var(--primary-color);*/
     border-radius: 8px;
     
-    background-color: var(--black-color);
     color: var(--white-color);
+    background-color: var(--black-color);
 }
 
 .card:hover{
     background-color: var(--primary-color);
     transition: 0.3s;
-    color: var(--fourth-color);
+    color: var(--white-color);
 }
 
 .imagem-produto{
@@ -171,7 +173,7 @@ h1{
 }
 
 .categoria{
-    padding: 2px 4px;
+    padding: 2px 6px;
     border: 1px solid var(--white-color);
     border-radius: 10px;
    
@@ -303,11 +305,7 @@ h1{
     font-size: 1.5rem;
 }
 
-/*Contato
-#contato p{
-    margin: 20px auto;
-}
-*/
+/*Contato*/
 #form-contato{
     margin: 20px auto 40px;
     width: 380px;
@@ -315,7 +313,7 @@ h1{
     border-radius: 10px;
     border: 1px solid var(--primary-color);
 
-    box-shadow: 0 0 8px 2px var(--primary-color);
+    box-shadow: 0 0 8px 3px var(--primary-color);
 }
 
 #form-contato label{
@@ -383,7 +381,7 @@ textarea{
     align-items: center;
     gap: 60px;
     
-    margin: 20px auto;
+    margin: 20px auto 60px;
 }
 
 .icon-contact{
@@ -398,5 +396,18 @@ textarea{
 
 /********************************************************************* FOOTER ***********************************************************************/
 footer{
-    padding: 20px 40px;
+    padding: 40px;
+
+    background-color: var(--primary-color);
+    text-align: center;
+    color: var(--white-color);
+}
+
+footer h2{
+    margin: 20px auto 30px;
+}
+
+footer h2,
+footer .icon-contact{
+    color: var(--white-color);
 }
