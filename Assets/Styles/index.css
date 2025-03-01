@@ -18,6 +18,11 @@
     color: var(--black-color);
 }
 
+body{
+    background-color: var(--white-color);
+    text-align: center;
+}
+
 a{
     text-decoration: none;
 }
@@ -30,6 +35,14 @@ h2{
     font-size: 2.5rem; /*40px*/
     
     margin: 60px 0 10px;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    justify-items: center;
+    align-items: stretch;
+    gap: 30px;
 }
 
 /********************************************************************* HEADER ***********************************************************************/
@@ -89,11 +102,8 @@ header a{
 }
 
 /********************************************************************* MAIN ***********************************************************************/
-main{
-    /*padding: 20px 40px;*/
-    
-    background-color: var(--white-color);
-    text-align: center;
+#produtos, #vantagens, #depoimentos, #sobre-nos, #contato{
+    padding: 0 30px;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -113,6 +123,7 @@ h1{
 
     background-image: url(../Imgs/Wallpaper-hero.png);
     background-repeat: repeat;
+    background-size: cover;
 
     display: flex;
     justify-content: center;
@@ -135,9 +146,7 @@ h1{
 }
 
 .cards{
-    display: flex;
-    justify-content: center;
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
 
     margin: 0 0 40px;
 }
@@ -145,17 +154,10 @@ h1{
 .card{
     width: 210px;
     padding: 15px;
-    /*border: 2px dashed var(--primary-color);*/
     border-radius: 8px;
     
     color: var(--white-color);
-    background-color: var(--black-color);
-}
-
-.card:hover{
     background-color: var(--primary-color);
-    transition: 0.3s;
-    color: var(--white-color);
 }
 
 .imagem-produto{
@@ -206,12 +208,9 @@ h1{
     text-decoration: underline;
 }
 
-/*Vantegens*/
+/*Vantagens*/
 #cards-vantagens{
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
 }
 
 .card-vantagem{
@@ -238,12 +237,9 @@ h1{
 }
   
 /*Depoimentos*/
-.depoimentos{
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    gap: 30px;
-    
+.depoimentos{    
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+
     margin: 0 0 40px;
 }
 
@@ -301,9 +297,11 @@ h1{
     margin-bottom: 30px;
 }
 
+/*
 .image-sobre-nos{
     width: 400px;
 }
+*/
 
 .image-sobre-nos img{
     width: 100%;
@@ -321,7 +319,7 @@ h1{
     margin: 15px auto;
     
     line-height: 24px;
-    text-align: left;
+    text-align: center;
 }
 
 .bi-stars{
@@ -434,4 +432,42 @@ footer h2{
 footer h2,
 footer .icon-contact{
     color: var(--white-color);
+}
+
+/********************************************************************* RESPONSIVIDADE ***********************************************************************/
+@media only screen and (min-width: 1200px){
+    #menu-mobile{
+        display: none;
+    }
+
+    #fundacao-objetivo .image-sobre-nos,
+    #missao-visao-valores .image-sobre-nos{
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+
+        width: 340px;
+        height: 340px;
+    }
+
+    #fundacao-objetivo .image-sobre-nos{
+        background-image: url(../Imgs/foto-temporaria.png);
+        
+    }
+
+    #missao-visao-valores .image-sobre-nos{
+        background-image: url(../Imgs/foto-temporaria-2.png);
+        
+    }
+
+    .texto-sobre-nos p{
+        text-align: left;
+    }
+    
+}
+
+@media only screen and (max-width: 420px){
+    #form-contato{
+        width: 90%;
+    }
 }
