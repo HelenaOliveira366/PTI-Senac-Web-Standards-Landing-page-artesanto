@@ -67,10 +67,15 @@ header a{
     width: 40px;
 }
 
-.navbar{
+.navbar-desktop,
+.navbar-mobile{
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.navbar-desktop{
+    display: none;
 }
 
 .navbar-items{
@@ -99,6 +104,16 @@ header a{
     background-color: var(--secondary-color);
     color: var(--white-color);
     transition: 0.3s;
+}
+
+/*Navbar mobile*/
+.navbar-mobile{
+    display: flex;
+}
+
+#menu{
+    color: var(--white-color);
+    font-size: 1.375rem;
 }
 
 /********************************************************************* MAIN ***********************************************************************/
@@ -238,7 +253,7 @@ h1{
   
 /*Depoimentos*/
 .depoimentos{    
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 
     margin: 0 0 40px;
 }
@@ -247,7 +262,7 @@ h1{
     background-color: var(--tertiary-color);
     
     padding: 20px;
-    width: 400px;
+    width: 350px;
     border-radius: 10px;
     border: 1px solid var(--tertiary-color);
     
@@ -292,16 +307,10 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 0px;
 
     margin-bottom: 30px;
 }
-
-/*
-.image-sobre-nos{
-    width: 400px;
-}
-*/
 
 .image-sobre-nos img{
     width: 100%;
@@ -436,8 +445,17 @@ footer .icon-contact{
 
 /********************************************************************* RESPONSIVIDADE ***********************************************************************/
 @media only screen and (min-width: 1200px){
-    #menu-mobile{
+    /*Navbar mobile*/
+    .navbar-mobile{
         display: none;
+    }
+
+    .navbar-desktop{
+        display: flex;
+    }
+
+    .card-sobre-nos {
+        gap: 30px;
     }
 
     #fundacao-objetivo .image-sobre-nos,
